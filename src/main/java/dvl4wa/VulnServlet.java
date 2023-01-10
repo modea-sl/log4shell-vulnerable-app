@@ -19,8 +19,8 @@ public class VulnServlet extends HttpServlet {
       Writer writer = res.getWriter();
 	  // If there's an x-log header, we will send it to the log, unsanitized, triggering log4j exploit
       if(headers.containsKey("x-log")) {
-        writer.write("Logging to console using vulnerable log4j2!\n");
-        logger.info(headers.get("x-log"));
+        writer.write("Logging to console using vulnerable log4j2!  Just kidding, no.\n");
+        // logger.info(headers.get("x-log"));
       } else {
         writer.write("Hello world!\n\nNo x-log header detected.\n");
       }
